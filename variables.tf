@@ -1,8 +1,8 @@
 variable "project_id" {
-    type = string
-  
+  type = string
+
 }
 variable "region" {
-    type = string
-  
+  type = string
+
 }
