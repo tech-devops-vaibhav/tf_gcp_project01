@@ -4,6 +4,10 @@ resource "google_compute_instance_template" "default" {
     machine_type = var.machine_type
     tags = var.instance_tags
 
+    lifecycle {
+      create_before_destroy = true
+    }
+
     disk {
       source_image = var.source_image
       boot = true
