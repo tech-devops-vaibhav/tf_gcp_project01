@@ -6,8 +6,11 @@ variable "project_id" {
 variable "mig_name" {
     description = "name of managed instance group"
     type = string
-}
+ 
+    }
 
+
+#This block is not used in main.tf file since we're creating 
 variable "base_instance_name" {
     description = "name of instanes in MIG"
     type = string
@@ -17,9 +20,9 @@ variable "region" {
     description = "region in which mig will be created"
     type = map(string)
     default = {
-        "us" = "us-central1"
-        "eu" = "europe-central2"
-        "asia" = "asia-south1"
+        "us-central" = "us-central1"
+        "eu-central" = "europe-central2"
+        "asia-south" = "asia-south1"
 
     }
   
@@ -82,10 +85,10 @@ variable "cooldown_period" {
     default = 60
 }
 
-variable "target_rps" {
+variable "target_lb_utilization" {
     description = "target request per sec for scaling"
     type = number
-    default = 30
+    default = 0.5
   
 }
 
